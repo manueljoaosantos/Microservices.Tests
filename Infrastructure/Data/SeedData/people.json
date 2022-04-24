@@ -1,0 +1,24 @@
+[
+   {
+      "Name": "Manuel",
+      "Age": 55,
+      "Address":
+         {
+               "StreetAdress": "Avenida da Boavista, 100",
+               "City": "Porto",
+               "State": "Boavista",
+               "ZipCode": "4523"
+         }
+   },
+   {
+      "Name": "Maria",
+      "Age": 23,
+      "Address":
+         {
+               "StreetAdress": "Avenida do Comercio, 11",
+               "City": "Combra",
+               "State": "Aliados",
+               "ZipCode": "789"
+         }
+   }
+]
