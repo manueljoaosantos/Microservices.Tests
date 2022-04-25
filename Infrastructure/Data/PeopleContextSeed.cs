@@ -6,7 +6,7 @@ namespace Infrastructure.Data
 {
     public class PeopleContextSeed
     {
-        public static async Task SeedAsync(PeopleContext context, ILoggerFactory loggerFactory)
+        public static async Task SeedAsync(BaseContext context, ILoggerFactory loggerFactory)
         {
             try
             {
@@ -25,7 +25,7 @@ namespace Infrastructure.Data
             }
             catch (Exception ex)
             {
-                var logger = loggerFactory.CreateLogger<PeopleContext>();
+                var logger = loggerFactory.CreateLogger<BaseContext>();
                 logger.LogError(ex.Message);
             }
         }

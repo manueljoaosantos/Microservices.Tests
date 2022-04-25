@@ -1,11 +1,12 @@
-﻿namespace Core.Interfaces
+﻿using System;
+using System.Threading.Tasks;
+using Core.Entities;
+
+namespace Core.Interfaces
 {
-    public interface IUnitOfWork :IDisposable
+    public interface IUnitOfWork : IDisposable
     {
-        IPersonRepository Person { get; }
-
-        IAdressRepository Adress { get; }
-
-        int Save();
+        IGenericRepository<TEntity> Repository<TEntity>() where TEntity : BaseEntity;
+        Task<int> Complete();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Core.Interfaces
 {
-    public interface IPersonRepository : IGenericRepository<Person>
+    public interface IPersonRepository
     {
         IEnumerable<Person> GetAdultPersons();
 
