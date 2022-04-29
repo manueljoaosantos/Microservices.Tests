@@ -13,10 +13,10 @@ namespace Infrastructure.Data
         {
             _context = context;
         }
-
         public IEnumerable<Person> GetAdultPersons()
         {
             return _context.Person.Where(p => p.Age >= 18).ToList();
         }
+
     }
 }

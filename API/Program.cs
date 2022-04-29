@@ -4,6 +4,7 @@ using API.Middleware;
 using Core.Entities.Identity;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Data.AdventureWorks;
 using Infrastructure.Identity;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
@@ -25,6 +26,11 @@ builder.Services.AddDbContext<BaseContext>(x =>
 
 builder.Services.AddDbContext<AppIdentityDbContext>(x =>
     x.UseSqlite(configuration.GetConnectionString("IdentityConnection")));
+
+builder.Services.AddDbContext<AdventureWorksContext>(x =>
+    x.UseSqlite(configuration.GetConnectionString("AdventureWorksConnection")));
+
+
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ITokenService, TokenService>();

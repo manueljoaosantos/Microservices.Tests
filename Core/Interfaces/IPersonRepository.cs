@@ -5,6 +5,5 @@ namespace Core.Interfaces
     public interface IPersonRepository
     {
         IEnumerable<Person> GetAdultPersons();
-
     }
 }
