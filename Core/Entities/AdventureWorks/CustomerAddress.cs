@@ -33,5 +33,19 @@ namespace Core.Entities.AdventureWorks
         public string UpdatedBy { get; set; }
         public DateTimeOffset? UpdatedOnUtc { get; set; }
         public virtual Customer Customer { get; set; }
+
+        public CustomerAddress()
+        {
+            AddressType = String.Empty;
+            Line1 = String.Empty;
+            Line2 = String.Empty;
+            City= String.Empty;
+            StateProvince = String.Empty;
+            CountryRegion = String.Empty;
+            PostalCode = String.Empty;
+            CreatedBy = String.Empty;
+            UpdatedBy = String.Empty;
+            Customer = new Customer();
+        }
     }
 }

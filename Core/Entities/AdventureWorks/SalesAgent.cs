@@ -6,7 +6,7 @@ namespace Core.Entities.AdventureWorks
     {
         public SalesAgent()
         {
-        Customers = new HashSet<Customer>();
+            Customers = new HashSet<Customer>();
         }
 
         [Required]

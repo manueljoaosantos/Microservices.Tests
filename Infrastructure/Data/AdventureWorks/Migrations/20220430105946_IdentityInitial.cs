@@ -127,7 +127,8 @@ namespace Infrastructure.Data.AdventureWorks.Migrations
                 name: "Customer",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Num = table.Column<string>(type: "TEXT", maxLength: 15, nullable: false),
                     Name = table.Column<string>(type: "TEXT", maxLength: 512, nullable: false),
                     CompanyName = table.Column<string>(type: "TEXT", maxLength: 128, nullable: false),
@@ -167,7 +168,7 @@ namespace Infrastructure.Data.AdventureWorks.Migrations
                     CreatedOnUtc = table.Column<long>(type: "INTEGER", nullable: false),
                     UpdatedBy = table.Column<string>(type: "TEXT", maxLength: 320, nullable: false),
                     UpdatedOnUtc = table.Column<DateTimeOffset>(type: "TEXT", nullable: true),
-                    CustomerId = table.Column<Guid>(type: "TEXT", nullable: false)
+                    CustomerId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -209,6 +210,7 @@ namespace Infrastructure.Data.AdventureWorks.Migrations
                     CreatedOnUtc = table.Column<long>(type: "INTEGER", nullable: false),
                     UpdatedBy = table.Column<string>(type: "TEXT", maxLength: 320, nullable: false),
                     UpdatedOnUtc = table.Column<DateTimeOffset>(type: "TEXT", nullable: true),
+                    CustomerId1 = table.Column<int>(type: "INTEGER", nullable: false),
                     ShipToAddressId1 = table.Column<int>(type: "INTEGER", nullable: false),
                     OrderAddressId = table.Column<int>(type: "INTEGER", nullable: true),
                     OrderAddressId1 = table.Column<int>(type: "INTEGER", nullable: true)
@@ -217,8 +219,8 @@ namespace Infrastructure.Data.AdventureWorks.Migrations
                 {
                     table.PrimaryKey("PK_Order", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Order_Customer_CustomerId",
-                        column: x => x.CustomerId,
+                        name: "FK_Order_Customer_CustomerId1",
+                        column: x => x.CustomerId1,
                         principalTable: "Customer",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -287,9 +289,9 @@ namespace Infrastructure.Data.AdventureWorks.Migrations
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Order_CustomerId",
+                name: "IX_Order_CustomerId1",
                 table: "Order",
-                column: "CustomerId");
+                column: "CustomerId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Order_OrderAddressId",

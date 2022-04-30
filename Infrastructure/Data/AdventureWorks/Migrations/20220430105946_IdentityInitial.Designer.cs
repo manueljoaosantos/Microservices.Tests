@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.AdventureWorks.Migrations
 {
     [DbContext(typeof(AdventureWorksContext))]
-    [Migration("20220426102602_IdentityInitial")]
+    [Migration("20220430105946_IdentityInitial")]
     partial class IdentityInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,9 +21,9 @@ namespace Infrastructure.Data.AdventureWorks.Migrations
 
             modelBuilder.Entity("Core.Entities.AdventureWorks.Customer", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("CompanyName")
                         .IsRequired()
@@ -105,8 +105,8 @@ namespace Infrastructure.Data.AdventureWorks.Migrations
                     b.Property<long>("CreatedOnUtc")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid>("CustomerId")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Line1")
                         .IsRequired()
@@ -172,6 +172,9 @@ namespace Infrastructure.Data.AdventureWorks.Migrations
 
                     b.Property<Guid>("CustomerId")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("CustomerId1")
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
@@ -243,7 +246,7 @@ namespace Infrastructure.Data.AdventureWorks.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("CustomerId1");
 
                     b.HasIndex("OrderAddressId");
 
@@ -568,7 +571,7 @@ namespace Infrastructure.Data.AdventureWorks.Migrations
                 {
                     b.HasOne("Core.Entities.AdventureWorks.Customer", "Customer")
                         .WithMany("Orders")
-                        .HasForeignKey("CustomerId")
+                        .HasForeignKey("CustomerId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

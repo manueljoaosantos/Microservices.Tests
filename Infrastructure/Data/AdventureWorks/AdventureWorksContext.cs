@@ -7,7 +7,9 @@ namespace Infrastructure.Data.AdventureWorks
 {
     public class AdventureWorksContext : DbContext
     {
-        public AdventureWorksContext(DbContextOptions<AdventureWorksContext> options) : base(options){ }
+        public AdventureWorksContext(DbContextOptions<AdventureWorksContext> options) : base(options){
+            
+        }
 
         public DbSet<Customer> Customer { get; set; }
         public DbSet<CustomerAddress> CustomerAddress { get; set; }        

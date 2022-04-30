@@ -1,16 +1,14 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Core.Entities.AdventureWorks
 {
     public class Customer : BaseEntity
     {    
-        public Customer()
-        {
-            CustomerAddresses = new HashSet<CustomerAddress>();
-            Orders = new HashSet<Order>();
-        }
-        [Required]
-        public Guid Id { get; set; }
+
+/*        [Required]
+        public Guid Id { get; set; }*/
         [Required]
         [MinLength(10)]
         [MaxLength(15)]
@@ -37,5 +35,19 @@ namespace Core.Entities.AdventureWorks
         public virtual SalesAgent SalesAgent { get; set; }
         public virtual ICollection<CustomerAddress> CustomerAddresses { get; }
         public virtual ICollection<Order> Orders { get; }
+
+        public Customer()
+        {
+            Num = String.Empty;
+            Name = String.Empty;
+            CompanyName = String.Empty;
+            EmailAddress= String.Empty;
+            Phone= String.Empty;
+            CreatedBy= String.Empty;
+            UpdatedBy= String.Empty;
+            SalesAgent = new SalesAgent();
+            CustomerAddresses = new HashSet<CustomerAddress>();
+            Orders = new HashSet<Order>();
+        }
     }
 }

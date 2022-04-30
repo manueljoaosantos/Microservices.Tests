@@ -1,0 +1,88 @@
+[
+   {
+      "Name": "Manuel",
+      "CompanyName": "teste 123",
+      "EmailAddress": "teste@teste.pt",
+      "Phone": "00351-234123123",
+      "CreatedBy": "Manuel Santos",
+      "Num": "12345678901",
+      "SalesAgentId": 1,
+      "CreatedOnUtc": "2021-01-21T00:00:00+01:00",
+      "SalesAgent":
+      {
+         "Name": "José",
+         "LoginId": "4" 
+      },
+      "CustomerAddresses":
+      [
+         {
+            "AddressType": "Avenida da Boavista, 100",
+            "City": "Porto",
+            "Line1": "123",
+            "StateProvince": "Boavista",
+            "CountryRegion": "Norte",
+            "PostalCode": "4523",
+            "CreatedBy": "Manuel Santos",
+            "CreatedOnUtc":  "2022-01-23T00:00:00+01:00"
+         },
+         {
+            "AddressType": "Rua de cima, 100",
+            "City": "Viseu",
+            "Line1": "4356",
+            "StateProvince": "Capitolio",
+            "CountryRegion": "Centro",
+            "PostalCode": "5467",
+            "CreatedBy": "Manuel Santos",
+            "CreatedOnUtc": "2022-01-21T00:00:00+01:00"
+         }
+      ]
+   },
+   {
+      "Name": "Paula",
+      "CompanyName": "Teste 321",
+      "EmailAddress": "agora@teste.pt",
+      "Phone": "00351-546745777",
+      "CreatedBy": "Paula Santos",
+      "Num": "65432678901",
+      "SalesAgentId": 1,
+      "CreatedOnUtc": "2021-10-21T00:00:00+01:00",
+      "SalesAgent":
+      {
+         "Name": "Maria",
+         "LoginId": "5" 
+      },
+      "CustomerAddresses":
+      [
+         {
+            "AddressType": "Rua direita, 101",
+            "City": "Coimbra",
+            "Line1": "654",
+            "StateProvince": "Constituição",
+            "CountryRegion": "Centro",
+            "PostalCode": "4567",
+            "CreatedBy": "João Santos",
+            "CreatedOnUtc":  "2022-02-20T00:00:00+01:00"
+         },
+         {
+            "AddressType": "Rua central, 340",
+            "City": "Lisboa",
+            "Line1": "457",
+            "StateProvince": "Rossio",
+            "CountryRegion": "Sul",
+            "PostalCode": "5467",
+            "CreatedBy": "Manuel Santos",
+            "CreatedOnUtc":  "2022-03-21T00:00:00+01:00"
+         },
+         {
+            "AddressType": "Rua Nova, 3456",
+            "City": "Faro",
+            "Line1": "532",
+            "StateProvince": "Portugalio",
+            "CountryRegion": "Sul",
+            "PostalCode": "67",
+            "CreatedBy": "Gabriel Santos",
+            "CreatedOnUtc":  "2022-01-11T00:00:00+01:00"
+         }
+      ]
+   }
+]

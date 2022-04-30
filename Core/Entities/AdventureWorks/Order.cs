@@ -5,12 +5,6 @@ namespace Core.Entities.AdventureWorks
 {
     public class Order : BaseEntity
     {
-        public Order()
-        {
-            OrderLineItems = new HashSet<OrderLineItem>();
-        }
-
-        [Required]
         public int OrderId { get; set; }
         [Required]
         public byte RevisionNum { get; set; }
@@ -27,7 +21,7 @@ namespace Core.Entities.AdventureWorks
         [MaxLength(25)]
         public string Num { get; set; }
         [MaxLength(25)]
-        public string PurchaseOrderNum { get; set; } 
+        public string PurchaseOrderNum { get; set; }
         [Required]
         public Guid CustomerId { get; set; }
         public Guid? ShipToAddressId { get; set; }
@@ -62,7 +56,22 @@ namespace Core.Entities.AdventureWorks
         public virtual Customer Customer { get; set; }
         public virtual OrderAddress ShipToAddress { get; set; }
 
-       // public virtual OrderAddress BillToAddress { get; set; }
+        // public virtual OrderAddress BillToAddress { get; set; }
         public virtual ICollection<OrderLineItem> OrderLineItems { get; }
+
+        public Order()
+        {
+            this.Num = String.Empty;
+            this.ShipMethod = String.Empty;
+            PurchaseOrderNum= String.Empty;
+            CreditCardApprovalCode = String.Empty;
+            Comment = String.Empty;
+            CreatedBy = String.Empty;
+            UpdatedBy = String.Empty;
+            Customer = new Customer();
+            ShipToAddress = new OrderAddress();
+            OrderLineItems = new HashSet<OrderLineItem>();
+
+        }
     }
 }

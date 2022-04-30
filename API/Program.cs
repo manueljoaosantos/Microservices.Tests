@@ -72,7 +72,12 @@ app.MapControllers();
             var identityContext = services.GetRequiredService<AppIdentityDbContext>();
             
             await identityContext.Database.MigrateAsync();
-            await AppIdentityDbContextSeed.SeedUsersAsync(userManager);            
+            await AppIdentityDbContextSeed.SeedUsersAsync(userManager);  
+            
+            var contextAdvWorks = services.GetRequiredService<AdventureWorksContext>();
+            await contextAdvWorks.Database.MigrateAsync();
+            await AdventureWorksContextSeed.SeedAsync(contextAdvWorks, loggerFactory);
+
         }
     }
     catch (Exception ex)
